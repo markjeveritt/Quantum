@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "693a64f9fbc4553de989068e5622acc76b3ae4b7c634c0304eb7b0e504405f0e"
+build_start_time: [1696502654, 230114000]
+build_end_time: [1696502654, 319199000]
+inputs:
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/Numerics/Numerics.swift"
+  : [1696363889, 978532530]

@@ -121,6 +121,23 @@ final class CoreTests: XCTestCase {
 
         XCTAssertTrue( (matrix * vector).elements == [17.0,39.0] )
     }
+    
+    
+    func test_square_matrix_multiplication() throws {
+        
+        let space = VectorSpace<Double>(dimension: 2, label: "MatMult test space")
+        
+        let A = Matrix(elements: [1,2,3,4], in: space)
+        let B = Matrix(elements: [5,6,7,8], in: space)
+        
+        let C = A*B
+        
+        XCTAssertEqual(C.elements, [19,22,43,50])
+        
+        
+        
+        
+    }
 
     func test_matrix_approximateEquals() throws {
         let i = C( real: 0.0, imag: 1.0 )

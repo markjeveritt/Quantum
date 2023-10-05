@@ -1,0 +1,4 @@
+module CDarwinOperatingSystemStats {
+    umbrella header "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Platform/CDarwinOperatingSystemStats/include/CDarwinOperatingSystemStats.h"
+    export *
+}

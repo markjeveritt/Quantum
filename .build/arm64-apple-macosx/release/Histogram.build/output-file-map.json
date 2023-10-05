@@ -1,0 +1,12 @@
+{
+  "": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/Histogram.build/Histogram.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/Histogram.build/Histogram.o",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/Histogram.build/master.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-histogram/Sources/Histogram/Histogram.swift": {
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/Histogram.build/Histogram.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/Histogram.build/Histogram~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/Histogram.build/Histogram.swiftdeps"
+  }
+}

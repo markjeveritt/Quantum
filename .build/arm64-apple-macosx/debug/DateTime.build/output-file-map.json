@@ -1,0 +1,35 @@
+{
+  "": {
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/master.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-datetime/Sources/DateTime/BenchmarkClock.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/BenchmarkClock.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/BenchmarkClock.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/BenchmarkClock~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/BenchmarkClock.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-datetime/Sources/DateTime/Duration+Convenience.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/Duration+Convenience.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/Duration+Convenience.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/Duration+Convenience~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/Duration+Convenience.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-datetime/Sources/DateTime/EpochDateTime.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/EpochDateTime.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/EpochDateTime.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/EpochDateTime~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/EpochDateTime.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-datetime/Sources/DateTime/FoundationExports.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/FoundationExports.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/FoundationExports.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/FoundationExports~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/FoundationExports.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-datetime/Sources/DateTime/InternalUTCClock.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/InternalUTCClock.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/InternalUTCClock.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/InternalUTCClock~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/DateTime.build/InternalUTCClock.swiftdeps"
+  }
+}

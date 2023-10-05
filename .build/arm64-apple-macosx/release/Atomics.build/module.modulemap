@@ -1,0 +1,4 @@
+module Atomics {
+    header "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/Atomics.build/Atomics-Swift.h"
+    requires objc
+}

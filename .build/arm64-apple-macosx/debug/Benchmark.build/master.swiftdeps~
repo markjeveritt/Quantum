@@ -1,0 +1,53 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "70da1c5af9aff004ce9d4699143299ca0f6f20bc7348bb75a5573f079f76fc6e"
+build_start_time: [1696363903, 136109000]
+build_end_time: [1696363903, 700970000]
+inputs:
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/ARCStats/ARCStats.swift"
+  : !private [1696363891, 76626342]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/ARCStats/ARCStatsProducer.swift"
+  : !private [1696363891, 76702842]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/Benchmark+ConvenienceInitializers.swift"
+  : !private [1696363891, 76773133]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/Benchmark.swift"
+  : !private [1696363891, 76897924]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/BenchmarkExecutor+Extensions.swift"
+  : !private [1696363891, 76978132]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/BenchmarkExecutor.swift"
+  : !private [1696363891, 77076506]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/BenchmarkInternals.swift"
+  : !private [1696363891, 77142755]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/BenchmarkMetric+Defaults.swift"
+  : !private [1696363891, 77227797]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/BenchmarkMetric.swift"
+  : !private [1696363891, 77319421]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/BenchmarkResult.swift"
+  : !private [1696363891, 77458004]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/BenchmarkRunner+ReadWrite.swift"
+  : !private [1696363891, 77531586]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/BenchmarkRunner.swift"
+  : !private [1696363891, 77658752]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/BenchmarkThresholds+Defaults.swift"
+  : !private [1696363891, 77730918]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/BenchmarkThresholds.swift"
+  : !private [1696363891, 77793751]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/Blackhole.swift"
+  : !private [1696363891, 77863834]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/Int+Extensions.swift"
+  : !private [1696363891, 79968028]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/MallocStats/MallocStats+jemalloc-support.swift"
+  : !private [1696363891, 80102277]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/MallocStats/MallocStats.swift"
+  : !private [1696363891, 80175735]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/MallocStats/MallocStatsProducer+jemalloc.swift"
+  : !private [1696363891, 80265693]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/NIOLock.swift"
+  : !private [1696363891, 80340734]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/OperatingSystemStats/OperatingSystemStats.swift"
+  : !private [1696363891, 80460150]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/OperatingSystemStats/OperatingSystemStatsProducer+Darwin.swift"
+  : !private [1696363891, 80555566]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/OperatingSystemStats/OperatingSystemStatsProducer+Linux.swift"
+  : !private [1696363891, 80625441]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/Benchmark/Statistics.swift"
+  : !private [1696363891, 80706190]

@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "7211a85efe51d1ffda09fd2351af4f439febead5ec59a272487aea30d77138dd"
+build_start_time: [1696502662, 690297000]
+build_end_time: [1696502662, 968337000]
+inputs:
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Plugins/BenchmarkBoilerplateGenerator/BenchmarkBoilerplateGenerator.swift"
+  : [1696363891, 73970985]

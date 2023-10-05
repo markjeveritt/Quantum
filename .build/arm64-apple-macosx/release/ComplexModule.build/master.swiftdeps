@@ -1,0 +1,13 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "4ad2a36ad475ed258d17fdc4ed137dd25d545e163b6241e59e5a88dc80972309"
+build_start_time: [1696502653, 107474000]
+build_end_time: [1696502654, 38162000]
+inputs:
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/ComplexModule/Arithmetic.swift"
+  : [1696363889, 977741577]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/ComplexModule/Complex.swift"
+  : [1696363889, 977974283]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/ComplexModule/Differentiable.swift"
+  : [1696363889, 978054241]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/ComplexModule/ElementaryFunctions.swift"
+  : [1696363889, 978202824]

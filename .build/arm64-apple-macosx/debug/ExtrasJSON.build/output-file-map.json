@@ -1,0 +1,83 @@
+{
+  "": {
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/master.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-extras-json/Sources/ExtrasJSON/ArrayKey.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/ArrayKey.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/ArrayKey.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/ArrayKey~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/ArrayKey.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-extras-json/Sources/ExtrasJSON/Decoding/JSONDecoder.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Decoding/JSONDecoder.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Decoding/JSONDecoder.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Decoding/JSONDecoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Decoding/JSONDecoder.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-extras-json/Sources/ExtrasJSON/Decoding/JSONKeyedDecodingContainer.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Decoding/JSONKeyedDecodingContainer.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Decoding/JSONKeyedDecodingContainer.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Decoding/JSONKeyedDecodingContainer~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Decoding/JSONKeyedDecodingContainer.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-extras-json/Sources/ExtrasJSON/Decoding/JSONSingleValueDecodingContainer.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Decoding/JSONSingleValueDecodingContainer.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Decoding/JSONSingleValueDecodingContainer.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Decoding/JSONSingleValueDecodingContainer~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Decoding/JSONSingleValueDecodingContainer.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-extras-json/Sources/ExtrasJSON/Decoding/JSONUnkeyedDecodingContainer.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Decoding/JSONUnkeyedDecodingContainer.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Decoding/JSONUnkeyedDecodingContainer.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Decoding/JSONUnkeyedDecodingContainer~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Decoding/JSONUnkeyedDecodingContainer.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-extras-json/Sources/ExtrasJSON/Encoding/JSONEncoder.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Encoding/JSONEncoder.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Encoding/JSONEncoder.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Encoding/JSONEncoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Encoding/JSONEncoder.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-extras-json/Sources/ExtrasJSON/Encoding/JSONKeyedEncodingContainer.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Encoding/JSONKeyedEncodingContainer.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Encoding/JSONKeyedEncodingContainer.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Encoding/JSONKeyedEncodingContainer~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Encoding/JSONKeyedEncodingContainer.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-extras-json/Sources/ExtrasJSON/Encoding/JSONSingleValueEncodingContainer.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Encoding/JSONSingleValueEncodingContainer.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Encoding/JSONSingleValueEncodingContainer.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Encoding/JSONSingleValueEncodingContainer~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Encoding/JSONSingleValueEncodingContainer.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-extras-json/Sources/ExtrasJSON/Encoding/JSONUnkeyedEncodingContainer.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Encoding/JSONUnkeyedEncodingContainer.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Encoding/JSONUnkeyedEncodingContainer.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Encoding/JSONUnkeyedEncodingContainer~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Encoding/JSONUnkeyedEncodingContainer.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-extras-json/Sources/ExtrasJSON/JSONError+DecodingError.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/JSONError+DecodingError.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/JSONError+DecodingError.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/JSONError+DecodingError~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/JSONError+DecodingError.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-extras-json/Sources/ExtrasJSON/JSONValue.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/JSONValue.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/JSONValue.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/JSONValue~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/JSONValue.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-extras-json/Sources/ExtrasJSON/Parsing/DocumentReader.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Parsing/DocumentReader.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Parsing/DocumentReader.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Parsing/DocumentReader~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Parsing/DocumentReader.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-extras-json/Sources/ExtrasJSON/Parsing/JSONParser.swift": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Parsing/JSONParser.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Parsing/JSONParser.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Parsing/JSONParser~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/ExtrasJSON.build/Parsing/JSONParser.swiftdeps"
+  }
+}

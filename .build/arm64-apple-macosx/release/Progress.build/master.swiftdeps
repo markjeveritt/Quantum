@@ -1,0 +1,11 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "afbecf72cdd1a86432ada948cfc4af12ef3511e959b44c398249e9b4aafa4ba8"
+build_start_time: [1696502652, 158762000]
+build_end_time: [1696502653, 658215000]
+inputs:
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/Progress.swift/Sources/Progress.swift"
+  : [1696363890, 127989196]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/Progress.swift/Sources/ProgressElements.swift"
+  : [1696363890, 128072237]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/Progress.swift/Sources/Utilities.swift"
+  : [1696363890, 128148737]

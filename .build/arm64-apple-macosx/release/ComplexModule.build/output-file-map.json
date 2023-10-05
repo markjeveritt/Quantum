@@ -1,0 +1,27 @@
+{
+  "": {
+    "dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/ComplexModule.build/ComplexModule.d",
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/ComplexModule.build/ComplexModule.o",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/ComplexModule.build/master.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/ComplexModule/Arithmetic.swift": {
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/ComplexModule.build/Arithmetic.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/ComplexModule.build/Arithmetic~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/ComplexModule.build/Arithmetic.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/ComplexModule/Complex.swift": {
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/ComplexModule.build/Complex.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/ComplexModule.build/Complex~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/ComplexModule.build/Complex.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/ComplexModule/Differentiable.swift": {
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/ComplexModule.build/Differentiable.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/ComplexModule.build/Differentiable~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/ComplexModule.build/Differentiable.swiftdeps"
+  },
+  "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/ComplexModule/ElementaryFunctions.swift": {
+    "object": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/ComplexModule.build/ElementaryFunctions.swift.o",
+    "swiftmodule": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/ComplexModule.build/ElementaryFunctions~partial.swiftmodule",
+    "swift-dependencies": "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/ComplexModule.build/ElementaryFunctions.swiftdeps"
+  }
+}

@@ -1,0 +1,25 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "c5daefdc1a791a7f2907aaa1f715886347306e05e3292b465526653a30cc432a"
+build_start_time: [1696502652, 159000000]
+build_end_time: [1696502653, 6176000]
+inputs:
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/RealModule/AlgebraicField.swift"
+  : [1696363889, 978770320]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/RealModule/ApproximateEquality.swift"
+  : [1696363889, 978856528]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/RealModule/AugmentedArithmetic.swift"
+  : [1696363889, 978936944]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/RealModule/Double+Real.swift"
+  : [1696363889, 979112026]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/RealModule/ElementaryFunctions.swift"
+  : [1696363889, 979220442]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/RealModule/Float+Real.swift"
+  : [1696363889, 979293900]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/RealModule/Float16+Real.swift"
+  : [1696363889, 979373316]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/RealModule/Float80+Real.swift"
+  : [1696363889, 979478857]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/RealModule/Real.swift"
+  : [1696363889, 979709022]
+  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-numerics/Sources/RealModule/RealFunctions.swift"
+  : [1696363889, 979800271]

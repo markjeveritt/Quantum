@@ -1,0 +1,4 @@
+module TextTable {
+    header "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/TextTable.build/TextTable-Swift.h"
+    requires objc
+}
