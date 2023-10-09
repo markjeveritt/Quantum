@@ -19,7 +19,7 @@ final class CoreTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func test_Complex_Basic() throws {
         
         let i = C(real: 0.0, imag: 1.0)
@@ -40,7 +40,7 @@ final class CoreTests: XCTestCase {
         XCTAssertEqual( i * -3.0 - 3.0 + threeplusthreei, zero )
         XCTAssertEqual( (3.0 + 4.0 * i).norm, 25.0 )
         XCTAssertEqual( (3.0 + 4.0 * i).modulus, 5.0 )
-
+        
     }
     
     func test_Has_protocolForFunctions() throws {
@@ -49,7 +49,7 @@ final class CoreTests: XCTestCase {
         XCTAssertEqual( (( a * b ) - C(real: -4.0, imag: 0.0)).modulus , 0.0 , accuracy: 1.0e-14 )
         XCTAssertEqual(a.argument, Double.pi/2.0, accuracy: 1.0e-14)
         XCTAssertEqual((-a).argument, -Double.pi/2.0, accuracy: 1.0e-14)
-
+        
         XCTAssertEqual(b.modulus, 2.0, accuracy: 1.0e-14)
     }
     
@@ -60,10 +60,10 @@ final class CoreTests: XCTestCase {
         let u1 = V( elements: [ 3.0 + 2.0 * i , -1.0 + 4.0 * i ] , in: space1)
         let v1 = V( elements: [ -3.0 - 2.0 * i , 1.0 - 4.0 * i ] , in: space1)
         let zero1 = V(elements: [ C.zero, C.zero ] , in: space1)
-
+        
         let space2 = VectorSpace<C>(dimension: 2, label: "test space 2")
         let u2 = V( elements: [ 3.0 + 2.0 * i , -1.0 + 4.0 * i ] , in: space2)
-
+        
         XCTAssertEqual( u1 + v1 , zero1 )
         XCTAssertTrue( u1.space == v1.space )
         XCTAssertFalse( u1.space == u2.space )
@@ -74,7 +74,7 @@ final class CoreTests: XCTestCase {
         XCTAssertEqual( u1 - v1 , u1 + u1 )
         XCTAssertEqual( u1 - u1 , zero1 )
         XCTAssertNotEqual( u1 - v1 , u1 - u1 )
-
+        
         XCTAssertEqual( sum(u1,v1) , zero1 )
         XCTAssertEqual( sum(u1,v1,u1) , u1 )
         XCTAssertEqual( u1 + u1 , ( C(4.0) * u1 ) / C(2.0) )
@@ -86,15 +86,15 @@ final class CoreTests: XCTestCase {
         XCTAssertEqual( u1 + u1 , ( 4 * u1 ) / 2 )
         XCTAssertEqual( u1 + u1 , ( u1 * 4 ) / 2 )
         XCTAssertNotEqual( u1 + u1 , ( u1 * 4 ) / 3 )
-
+        
     }
     
     func test_identity_operator() throws {
         let space = VectorSpace<Double>(dimension: 3, label: "test Space")
         XCTAssert(
             space.identityOperator.elements == [1.0,0.0,0.0,
-                                              0.0,1.0,0.0,
-                                              0.0,0.0,1.0]
+                                                0.0,1.0,0.0,
+                                                0.0,0.0,1.0]
         )
     }
     
@@ -118,7 +118,7 @@ final class CoreTests: XCTestCase {
         var vector = Vector(in: space)
         vector[0] = 5.0
         vector[1] = 6.0
-
+        
         XCTAssertTrue( (matrix * vector).elements == [17.0,39.0] )
     }
     
@@ -138,7 +138,7 @@ final class CoreTests: XCTestCase {
         
         
     }
-
+    
     func test_matrix_approximateEquals() throws {
         let i = C( real: 0.0, imag: 1.0 )
         let space = VectorSpace<Double>(dimension: 2, label: "test")
@@ -164,8 +164,8 @@ final class CoreTests: XCTestCase {
         let i = C( real: 0.0, imag: 1.0 )
         let spaceC = VectorSpace<Complex<Double>>(dimension: 2, label: "test")
         let A = Matrix(elements: [1 + i, 2 + 2 * i,
-                                   3 - i, i ],
-                        in: spaceC)
+                                  3 - i, i ],
+                       in: spaceC)
         let AT = Matrix(elements: [1 + i, 3 - i,
                                    2 + 2 * i, i ],
                         in: spaceC)
@@ -198,16 +198,16 @@ final class CoreTests: XCTestCase {
                                   0.0, 1.0, 0.0,
                                   0.0, 0.0, 2.0], in: space)
         let sparse_n = SparseMatrix(from: n)
-
+        
         XCTAssert(sparse_n.values.count == 2)
         XCTAssert(sparse_n.values[0] == CoordinateStorage(value: 1.0, row: 1, col: 1))
         XCTAssert(sparse_n.values[1] == CoordinateStorage(value: 2.0, row: 2, col: 2))
         XCTAssert(Matrix(fromSparse: sparse_n) == n)
         let a = Matrix<Double>(elements: [0.0, 1.0,  0.0,
-                                   0.0 , 0.0, sqrt(2.0),
-                                   0.0 , 0.0, 0.0], in: space)
+                                          0.0 , 0.0, sqrt(2.0),
+                                          0.0 , 0.0, 0.0], in: space)
         let sparse_a = SparseMatrix<Double>(from: a)
-
+        
         let apn = a + n
         
         let sparse_apn = sparse_a + sparse_n
@@ -228,7 +228,7 @@ final class CoreTests: XCTestCase {
         let sparse_nC = SparseMatrix(from: nC)
         let aC = spaceC.annihilationOperator
         let sparse_aC = SparseMatrix(from: aC)
-
+        
         let apnC = aC + nC
         let sparse_apnC = sparse_aC + sparse_nC
         XCTAssert(MatrixOperator(fromSparse: sparse_apnC) == apnC)
@@ -250,9 +250,33 @@ final class CoreTests: XCTestCase {
         XCTAssertTrue(bigMatrix.elements == [ 0.0, 5.0 , 0.0  , 10.0 ,
                                               6.0, 7.0 , 12.0 , 14.0,
                                               0.0, 15.0, 0.0  , 20.0,
-                                             18.0, 21.0,24.0  , 28.0] )
+                                              18.0, 21.0,24.0  , 28.0] )
     }
+    
+    
+    func testLinearFitting() throws {
+        
+        let x1Data = [0.0,1.0,2.0,3.0,4.0,5.0]
+        let y1Data = x1Data.map{$0 * 2}
+        
+        
+        let (slope1, intercept1) = getLinearFitCoefficientsFromLeastSquaresMethod(x1Data, y1Data)
+        
+        let y2Data = x1Data.map{$0 * 0.5 + 1}
+        
+        let (slope2, intercept2) = getLinearFitCoefficientsFromLeastSquaresMethod(x1Data, y2Data)
+        
+        XCTAssertEqual(slope1, 2.0)
+        XCTAssertEqual(intercept1, 0.0)
+        
+        XCTAssertEqual(slope2, 0.5)
+        XCTAssertEqual(intercept2, 1)
+    }
+    
 }
+
+
+
 
 //  Created by  M J Everitt on 17/01/2022.
 
