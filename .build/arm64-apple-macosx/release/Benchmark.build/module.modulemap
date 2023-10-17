@@ -1,4 +1,0 @@
-module Benchmark {
-    header "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/Benchmark.build/Benchmark-Swift.h"
-    requires objc
-}

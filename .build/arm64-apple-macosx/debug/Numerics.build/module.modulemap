@@ -1,4 +1,0 @@
-module Numerics {
-    header "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/Numerics.build/Numerics-Swift.h"
-    requires objc
-}

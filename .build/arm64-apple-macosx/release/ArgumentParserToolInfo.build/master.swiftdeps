@@ -1,7 +1,0 @@
-version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
-options: "c7eb29a3cb0481aa281723af0f5cc867c92d19e20c29d050df2e2c27fa1afe00"
-build_start_time: [1696502652, 165713000]
-build_end_time: [1696502653, 625188000]
-inputs:
-  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/swift-argument-parser/Sources/ArgumentParserToolInfo/ToolInfo.swift"
-  : [1696363890, 779392958]

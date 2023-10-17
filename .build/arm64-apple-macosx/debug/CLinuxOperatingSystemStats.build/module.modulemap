@@ -1,4 +1,0 @@
-module CLinuxOperatingSystemStats {
-    umbrella header "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Platform/CLinuxOperatingSystemStats/include/CLinuxOperatingSystemStats.h"
-    export *
-}

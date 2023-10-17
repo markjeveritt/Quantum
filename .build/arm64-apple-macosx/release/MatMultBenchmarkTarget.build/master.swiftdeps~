@@ -1,9 +1,0 @@
-version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
-options: "a3409d5076cb9c031244f06b71d5d007c3258ea0649dc12aaf749867b4af813b"
-build_start_time: [1696521694, 298345000]
-build_end_time: [1696521694, 567220000]
-inputs:
-  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/plugins/outputs/quantum/MatMultBenchmarkTarget/BenchmarkPlugin/__BenchmarkBoilerplate.swift"
-  : !dirty [1696521694, 232644669]
-  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/Benchmarks/MatMultBenchmarkTarget/MatMultBenchmarkTarget.swift"
-  : !dirty [1696521663, 926071804]

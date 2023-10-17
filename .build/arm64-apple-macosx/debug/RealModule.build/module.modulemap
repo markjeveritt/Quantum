@@ -1,4 +1,0 @@
-module RealModule {
-    header "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/debug/RealModule.build/RealModule-Swift.h"
-    requires objc
-}

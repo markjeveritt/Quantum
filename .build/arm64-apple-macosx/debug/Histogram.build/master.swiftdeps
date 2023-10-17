@@ -1,7 +1,0 @@
-version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
-options: "43f9d6dcfd360124a71ee57a9d4af1b82fe1e40b559ba860cf1816878c415f60"
-build_start_time: [1696363899, 912397000]
-build_end_time: [1696363903, 60075000]
-inputs:
-  ? "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-histogram/Sources/Histogram/Histogram.swift"
-  : [1696363891, 216085159]

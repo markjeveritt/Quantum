@@ -4,6 +4,10 @@
  Note that a matrix must live in a vector space.
  
  TODO: Optimise
+ KEY:
+ DCMM - divide and conquer matrix multiplication
+ BFMM - brute force matrix multiplication
+ SMM - strassen's matrix multiplication
  */
 import Foundation
 // Importantly (Liskov) Matrix can be a VectorType but it should not extend Vector.
@@ -48,18 +52,145 @@ public struct Matrix<T: Scalar>: VectorType, OperatorType {
     
     public static func * (lhs: Self, rhs: Self) -> Self {
 
-        var output = Self(in: lhs.space)
-        let dim = lhs.space.dimension
-        // there are much more efficient ways to do this - coding for clarity
+        return lhs.bruteForceMatrixMultiplication(rhs)
+    }
+    
+    
+    public func divideAndConquerMultiplication(_ rhs: Matrix<T>) -> Matrix<T> {
+        assert(rhs.space == self.space)
+        
+        let dim = self.space.dimension
+        if dim == 2 {return self.bruteForceMatrixMultiplication(rhs)}
+        
+        if dim % 2 != 0 {
+            let paddedSpace = VectorSpace<T>(dimension: dim + 1, label: "padded space")
+            let paddedlhs = self.addPaddingToGetEvenDimensions(paddedSpace: paddedSpace)
+            let paddedrhs = rhs.addPaddingToGetEvenDimensions(paddedSpace: paddedSpace)
+            
+            return paddedlhs.divideAndConquerMultiplication(paddedrhs).removePadding(unpaddedSpace: self.space)
+            
+        }
+        
+        let quartetSpace = VectorSpace<T>(dimension: dim/2, label: "quartet space")
+        let (a,b,c,d) = self.getDivideAndConquerQuartets(quartetSpace)
+        let (e,f,g,h) = rhs.getDivideAndConquerQuartets(quartetSpace)
+        
+        let topLeft = a.divideAndConquerMultiplication(e) + b.divideAndConquerMultiplication(g)
+        let topRight = a.divideAndConquerMultiplication(f) + b.divideAndConquerMultiplication(h)
+        let bottomLeft = c.divideAndConquerMultiplication(e) + d.divideAndConquerMultiplication(g)
+        let bottomRight = c.divideAndConquerMultiplication(f) + d.divideAndConquerMultiplication(h)
+        
+        return self.assembleDivideAndConquerResult(previousSpace: self.space, topLeft, topRight, bottomLeft, bottomRight)
+        
+        
+    }
+    
+    public func bruteForceMatrixMultiplication(_ rhs: Matrix<T>) -> Matrix<T> {
+        
+        assert(rhs.space == self.space, "Cannot multiply two matrices of different spaces")
+        
+        var output = Self(in: self.space)
+        let dim = self.space.dimension
+
         for i in 0 ..< dim {
             for j in 0 ..< dim {
                 for k in 0 ..< dim {
-                    output[i, j] = output[i, j] + lhs[i, k] * rhs[k, j]
+                    output[i, j] = output[i, j] + self[i, k] * rhs[k, j]
                 }
             }
         }
         return output
     }
+    
+    public func assembleDivideAndConquerResult(previousSpace: VectorSpace<T>, _ topLeft: Matrix<T>, _ topRight: Matrix<T>, _ bottomLeft: Matrix<T>, _ bottomRight: Matrix<T>) -> Matrix<T> {
+        
+        assert(topLeft.space == topRight.space && topRight.space == bottomLeft.space && bottomLeft.space == bottomRight.space)
+        assert(topLeft.space.dimension == self.space.dimension/2)
+        
+        let dim = self.space.dimension
+        
+        var elementsOfReturnMatrix: [T] = []
+        
+        for i in 0..<dim/2 {
+            elementsOfReturnMatrix += topLeft.elements[i*dim/2 ..< (i+1)*dim/2] + topRight.elements[i*dim/2 ..< (i+1)*dim/2]
+        }
+        
+        for i in 0 ..< dim/2 {
+           
+            elementsOfReturnMatrix += bottomLeft.elements[i*dim/2 ..< (i+1)*dim/2] + bottomRight.elements[i*dim/2 ..< (i+1)*dim/2]
+        }
+        
+        return Matrix<T>(elements: elementsOfReturnMatrix, in: previousSpace)
+        
+        
+        
+    }
+    
+    public func getDivideAndConquerQuartets(_ quartetSpace: VectorSpace<T>) -> (Matrix<T>, Matrix<T>, Matrix<T>, Matrix<T>) {
+        
+        let dim = self.space.dimension
+        assert(dim % 2 == 0, "Cannot get quartet matrices for a space of odd dimensions")
+    
+        
+        var topLeftElem: [T] = []
+        var topRightElem: [T] = []
+        var bottomLeftElem: [T] = []
+        var bottomRightElem: [T] = []
+        
+        //can do each of the for-loops in parallel
+        for i in 0..<dim/2 {
+            topLeftElem += self.elements[i*dim ..< i*dim + dim/2]
+            topRightElem += self.elements[i*dim + dim/2 ..< (i+1)*dim]
+        }
+        
+        for i in dim/2 ..< dim {
+            bottomLeftElem += self.elements[i*dim ..< i*dim + dim/2]
+            bottomRightElem += self.elements[i*dim + dim/2 ..< (i+1)*dim]
+            
+        }
+            
+        
+        let topLeft = Matrix<T>(elements: topLeftElem, in: quartetSpace)
+        let topRight = Matrix<T>(elements: topRightElem, in: quartetSpace)
+        let bottomLeft = Matrix<T>(elements: bottomLeftElem, in: quartetSpace)
+        let bottomRight = Matrix<T>(elements: bottomRightElem, in: quartetSpace)
+        
+        return (topLeft, topRight, bottomLeft, bottomRight)
+        
+    }
+    
+    
+    public func addPaddingToGetEvenDimensions(paddedSpace: VectorSpace<T>) -> Matrix<T> {
+        
+        assert(self.space.dimension % 2 == 1, "Space already has even dimensions")
+        
+        var temp = Matrix<T>(in: paddedSpace)
+        
+        for i in 0..<self.space.dimension {
+            for j in 0..<self.space.dimension {
+                temp[i,j] = self[i,j]
+            }
+        }
+        
+        return temp
+    }
+    
+    public func removePadding(unpaddedSpace: VectorSpace<T>) -> Matrix<T> {
+        
+        assert(unpaddedSpace.dimension == self.space.dimension - 1, "Previous space must have dimension one fewer than current space")
+        
+        var removedPadding = Matrix<T>(in: unpaddedSpace)
+        
+        for i in 0..<unpaddedSpace.dimension {
+            for j in 0..<unpaddedSpace.dimension {
+                removedPadding[i,j] = self[i,j]
+            }
+        }
+        
+        return removedPadding
+    }
+    
+    
     public static func * (lhs: Matrix<T>, rhs: Vector<T>) -> Vector<T> {
         checkInSameSpace(lhs,rhs)
 
@@ -148,3 +279,4 @@ extension Matrix where Self.ScalarField: ComplexNumber {
     }
 }
 //  Created by M J Everitt on 18/01/2022.
+

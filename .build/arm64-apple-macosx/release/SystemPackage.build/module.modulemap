@@ -1,4 +1,0 @@
-module SystemPackage {
-    header "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/arm64-apple-macosx/release/SystemPackage.build/SystemPackage-Swift.h"
-    requires objc
-}

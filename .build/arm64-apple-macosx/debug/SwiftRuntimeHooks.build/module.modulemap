@@ -1,4 +1,0 @@
-module SwiftRuntimeHooks {
-    umbrella header "/Users/georg1/Library/CloudStorage/OneDrive-LoughboroughUniversity/4th Year/Individual Project/Quantum/.build/checkouts/package-benchmark/Sources/SwiftRuntimeHooks/include/SwiftRuntimeHooks.h"
-    export *
-}

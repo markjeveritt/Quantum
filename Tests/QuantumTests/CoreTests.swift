@@ -273,6 +273,134 @@ final class CoreTests: XCTestCase {
         XCTAssertEqual(intercept2, 1)
     }
     
+    func testAddPadding() throws {
+        
+        let testCase = Matrix<Double>(elements: [1,2,3,4,5,6,7,8,9], in: VectorSpace(dimension: 3, label: "test padding space"))
+        
+        let paddedSpace = VectorSpace<Double>(dimension: 4, label: "padded space")
+        let paddedTest = testCase.addPaddingToGetEvenDimensions(paddedSpace: paddedSpace)
+        
+        XCTAssertEqual(testCase.space.dimension, paddedTest.space.dimension - 1)
+        
+        for i in 0..<testCase.space.dimension {
+            for j in 0..<testCase.space.dimension {
+                XCTAssertEqual(testCase[i,j], paddedTest[i,j])
+            }
+        }
+        
+        for i in 0..<paddedTest.space.dimension {
+            XCTAssertEqual(paddedTest[paddedTest.space.dimension - 1, i], 0)
+            XCTAssertEqual(paddedTest[i, paddedTest.space.dimension - 1], 0)
+            
+            
+        }
+    }
+    
+    func testRemovePadding() throws {
+        
+        let testCase = Matrix<Double>(elements: [1,2,3,4,5,6,7,8,9], in: VectorSpace(dimension: 3, label: "test padding space"))
+        let paddedSpace = VectorSpace<Double>(dimension: 4, label: "padded space")
+        let paddedTest = testCase.addPaddingToGetEvenDimensions(paddedSpace: paddedSpace)
+        let removedPadding = paddedTest.removePadding(unpaddedSpace: testCase.space)
+        XCTAssertEqual(testCase, removedPadding)
+        
+        
+    }
+    
+    
+    func testQuartetsForDivideAndConquer() throws {
+        
+        
+        let testQuartetSpace4 = VectorSpace<Double>(dimension: 4, label: "4x4 test quartet space")
+        let testQuartetSpace6 = VectorSpace<Double>(dimension: 6, label: "6x6 test quartet space ")
+        
+        var testCaseElem4 = [Double](repeating: 0.0, count: 16)
+        var testCaseElem6 = [Double](repeating: 0.0, count: 36)
+        
+        for i in 0..<16 {
+            testCaseElem4[i] = Double(i+1)
+        }
+        
+        for i in 0..<36 {
+            testCaseElem6[i] = Double(i+1)
+        }
+        // surely some type of syntax to do that as one line.
+        
+        let testCase4 = Matrix<Double>(elements: testCaseElem4, in: testQuartetSpace4)
+        let testCase6 = Matrix<Double>(elements: testCaseElem6, in: testQuartetSpace6)
+        
+        let quartetSpace4x4 = VectorSpace<Double>(dimension: 2, label: "4x4 quartet space")
+        let quartetSpace6x6 = VectorSpace<Double>(dimension: 3, label: "6x6 quartet space")
+        let (a,b,c,d) = testCase4.getDivideAndConquerQuartets(quartetSpace4x4)
+        let (e,f,g,h) = testCase6.getDivideAndConquerQuartets(quartetSpace6x6)
+        
+        XCTAssertEqual(a.elements, [1,2,5,6])
+        XCTAssertEqual(b.elements, [3,4,7,8])
+        XCTAssertEqual(c.elements, [9,10,13,14])
+        XCTAssertEqual(d.elements, [11,12,15,16])
+        
+        
+        XCTAssertEqual(e.elements, [1,2,3,7,8,9,13,14,15])
+        XCTAssertEqual(f.elements, [4,5,6,10,11,12,16,17,18])
+        XCTAssertEqual(g.elements, [19,20,21,25,26,27,31,32,33])
+        XCTAssertEqual(h.elements, [22,23,24,28,29,30,34,35,36])
+        
+        
+        
+        
+    }
+    
+    func testDivideAndConquerAssemblyFromQuartets() throws {
+        let testQuartetSpace4 = VectorSpace<Double>(dimension: 4, label: "4x4 test quartet space")
+        let testQuartetSpace6 = VectorSpace<Double>(dimension: 6, label: "6x6 test quartet space ")
+        
+        var testCaseElem4 = [Double](repeating: 0.0, count: 16)
+        var testCaseElem6 = [Double](repeating: 0.0, count: 36)
+        
+        for i in 0..<16 {
+            testCaseElem4[i] = Double(i+1)
+        }
+        
+        for i in 0..<36 {
+            testCaseElem6[i] = Double(i+1)
+        }
+        
+        let testCase4 = Matrix<Double>(elements: testCaseElem4, in: testQuartetSpace4)
+        let testCase6 = Matrix<Double>(elements: testCaseElem6, in: testQuartetSpace6)
+        
+        let quartetSpace4x4 = VectorSpace<Double>(dimension: 2, label: "4x4 quartet space")
+        let quartetSpace6x6 = VectorSpace<Double>(dimension: 3, label: "6x6 quartet space")
+        let (a,b,c,d) = testCase4.getDivideAndConquerQuartets(quartetSpace4x4)
+        let (e,f,g,h) = testCase6.getDivideAndConquerQuartets(quartetSpace6x6)
+        
+        let assembledTestCase4 = testCase4.assembleDivideAndConquerResult(previousSpace: testQuartetSpace4, a, b, c, d)
+        let assembledTestCase6 = testCase6.assembleDivideAndConquerResult(previousSpace: testQuartetSpace6, e, f, g, h)
+        
+        XCTAssertEqual(testCase4, assembledTestCase4)
+        XCTAssertEqual(testCase6, assembledTestCase6)
+        
+    }
+    
+    
+    func testDivideAndConquerMatrixMultiplication3x3() throws {
+        let space = VectorSpace<Double>(dimension: 3, label: "test divide and conquer 3x3 space")
+        let lhs = Matrix<Double>(elements: [1,0,0,0,1,0,0,0,1], in: space)
+        let rhs = Matrix<Double>(elements: [1,2,3,4,5,6,7,8,9], in: space)
+        
+        XCTAssertEqual(lhs.divideAndConquerMultiplication(rhs), rhs)
+        
+        
+    }
+    
+    
+    func testDivideAndConquer4x4() throws {
+        
+        let space = VectorSpace<Double>(dimension: 4, label: "test dcmm 4x4 space")
+        let lhs = Matrix<Double>(elements: [3.0/2,0,0,0,0,1.0/2,0,0,0,0,-1.0/2,0,0,0,0,-3.0/2], in: space)
+        let rhs = Matrix<Double>(elements: [1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1], in: space)
+        
+        XCTAssertEqual(lhs.divideAndConquerMultiplication(rhs).elements, lhs.bruteForceMatrixMultiplication(rhs).elements)
+    }
 }
 
 
