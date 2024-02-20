@@ -253,6 +253,137 @@ final class CoreTests: XCTestCase {
                                               18.0, 21.0,24.0  , 28.0] )
     }
     
+    func test_makingDiagonalSparseMatrix() throws {
+        
+        let testSpace = VectorSpace<Double>(dimension: 4, label: "")
+        
+        let denseMatrix = Matrix<Double>(elements: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16], in: testSpace)
+        
+        let diagonalSparse = DiagonalSparseMatrix(from: denseMatrix)
+        
+        XCTAssertEqual(diagonalSparse.space, testSpace)
+        XCTAssertEqual(diagonalSparse.diagonals[-3]!.elements, [3:13])
+        XCTAssertEqual(diagonalSparse.diagonals[-2]!.elements, [2:9, 3:14])
+        XCTAssertEqual(diagonalSparse.diagonals[-1]!.elements, [1:5, 2:10, 3:15])
+        XCTAssertEqual(diagonalSparse.diagonals[0]!.elements, [0:1, 1:6, 2:11, 3:16])
+        XCTAssertEqual(diagonalSparse.diagonals[1]!.elements, [0:2, 1:7, 2:12])
+        XCTAssertEqual(diagonalSparse.diagonals[2]!.elements, [0:3, 1:8])
+        XCTAssertEqual(diagonalSparse.diagonals[3]!.elements, [0:4])
+        
+    }
+    
+    func test_diagonalSparseAdd() throws {
+        
+        let space = VectorSpace<Double>(dimension: 3, label: "test diag sparse add space")
+        let lhs = DiagonalSparseMatrix(in: space, diagonals: [0:MatrixDiagonal(dimension: space.dimension, diagIdx: 0, elements: [0:1, 1:1, 2:1])])
+        
+        let rhs = DiagonalSparseMatrix(in: space, diagonals: [1:MatrixDiagonal(dimension: space.dimension, diagIdx: 1, elements: [0:1, 1:1])])
+       
+        XCTAssertEqual((lhs + rhs).diagonals[0]!.elements, [0:1, 1:1, 2:1])
+        XCTAssertEqual((lhs + rhs).diagonals[1]!.elements, [0:1, 1:1])
+    }
+    
+    func test_diagonalSparseSubtract() throws {
+        
+        let space = VectorSpace<Double>(dimension: 3, label: "test diag sparse add space")
+        let lhs = DiagonalSparseMatrix(in: space, diagonals: [0:MatrixDiagonal(dimension: space.dimension, diagIdx: 0, elements: [0:1, 1:1, 2:1])])
+        
+        let rhs = DiagonalSparseMatrix(in: space, diagonals: [1:MatrixDiagonal(dimension: space.dimension, diagIdx: 1, elements: [0:1, 1:1])])
+        
+        XCTAssertEqual((lhs - rhs).diagonals[0]!.elements, [0:1, 1:1, 2:1])
+        XCTAssertEqual((lhs - rhs).diagonals[1]!.elements, [0:-1, 1:-1])
+    }
+    
+    func test_diagonalSparseVecMult() throws {
+        
+        let space = VectorSpace<Double>(dimension: 2, label: "test Space")
+        
+        let zeroDiag = MatrixDiagonal(dimension: 2, diagIdx: 0, elements: [0: 1, 1:4])
+        let oneDiag = MatrixDiagonal(dimension: 2, diagIdx: 1, elements: [0:2])
+        let minusOneDiag = MatrixDiagonal(dimension: 2, diagIdx: -1, elements: [1:3])
+        
+        var matrix = DiagonalSparseMatrix(in: space,
+                                          diagonals: [0: zeroDiag, 1: oneDiag, -1: minusOneDiag])
+        
+        var vector = Vector(in: space)
+        vector[0] = 5.0
+        vector[1] = 6.0
+        print((matrix * vector).elements)
+        XCTAssertTrue( (matrix * vector).elements == [17.0,39.0] )
+    }
+    
+    func test_diagonalSparseMatMult() throws {
+        
+        let testDiagMMSpace = VectorSpace<Double>(dimension: 4, label: "")
+        
+        /*
+         A = 1 0 0 0
+             2 3 0 0
+             0 4 5 0
+             0 0 6 7 , diagonals are 0,-1
+         
+         B = 0 1 0 0
+             1 0 1 0
+             0 1 0 1
+             0 0 1 0 , diagonals are 1,-1
+         
+         C = A*B
+           = 0 1 0 0
+             3 2 3 0
+             4 5 4 5
+             0 6 7 6 , should have diagonals -1,-2,0,1.
+         */
+        let A = DiagonalSparseMatrix(in: testDiagMMSpace, diagonals:
+                                        [0: MatrixDiagonal(dimension: 4, diagIdx: 0, elements: [0:1, 1:3, 2:5, 3:7]),
+                                         -1: MatrixDiagonal(dimension: 4, diagIdx: -1, elements: [1: 2, 2:4, 3: 6])])
+        
+        
+        let B = DiagonalSparseMatrix(in: testDiagMMSpace, diagonals:
+                                        [-1: MatrixDiagonal(dimension: 4, diagIdx: -1, elements: [1: 1, 2:1, 3:1]),
+                                          1: MatrixDiagonal(dimension: 4, diagIdx: 1, elements: [0:1, 1:1, 2:1])])
+        
+        let C = A*B
+        
+        XCTAssertEqual(C.diagonals[-2]!.elements, [2:4, 3:6])
+        XCTAssertEqual(C.diagonals[-1]!.elements, [1:3, 2:5, 3:7])
+        XCTAssertEqual(C.diagonals[0]!.elements, [1:2, 2:4, 3:6])
+        XCTAssertEqual(C.diagonals[1]!.elements, [0:1, 1:3, 2:5])
+        
+        XCTAssertNil(C.diagonals[-3])
+        XCTAssertNil(C.diagonals[2])
+        XCTAssertNil(C.diagonals[3])
+        
+        
+    }
+    
+    func test_diagonalSparseTensorProduct() throws {
+        
+        
+        let leftSubSpace = VectorSpace<Double>(dimension: 2, label: "")
+        let rightSubSpace = VectorSpace<Double>(dimension: 3, label: "")
+        let fullSpace = VectorSpace<Double>(tensorProductOf: leftSubSpace, rightSubSpace,
+                                            label: "")
+        let A = DiagonalSparseMatrix(in: leftSubSpace, diagonals: [0: MatrixDiagonal(dimension: 2, diagIdx: 0, elements: [0:1]),
+                                                                   1: MatrixDiagonal(dimension: 2, diagIdx: 1, elements: [0:1])])
+        
+        let B = DiagonalSparseMatrix(in: rightSubSpace, diagonals: [-1: MatrixDiagonal(dimension: 3, diagIdx: -1, elements: [1:1, 2:2]),
+                                                                     2: MatrixDiagonal(dimension: 3, diagIdx: 2, elements: [0:1])])
+        
+        let C = fullSpace.tensorProduct(of: A, with: B)
+        
+        XCTAssertEqual(C.diagonals[2]!.elements, [0:1, 1:1, 2:2])
+        XCTAssertEqual(C.diagonals[5]!.elements, [0:1])
+        XCTAssertEqual(C.diagonals[-1]!.elements, [1:1, 2:2])
+        
+        for diagIdx in [-5,-4,-3,-2,0,1,3,4] {
+            XCTAssertNil(C.diagonals[diagIdx])
+        }
+        
+    }
+    
+    
+    
+    
     
     func testLinearFitting() throws {
         
@@ -272,135 +403,8 @@ final class CoreTests: XCTestCase {
         XCTAssertEqual(slope2, 0.5)
         XCTAssertEqual(intercept2, 1)
     }
+   
     
-    func testAddPadding() throws {
-        
-        let testCase = Matrix<Double>(elements: [1,2,3,4,5,6,7,8,9], in: VectorSpace(dimension: 3, label: "test padding space"))
-        
-        let paddedSpace = VectorSpace<Double>(dimension: 4, label: "padded space")
-        let paddedTest = testCase.addPaddingToGetEvenDimensions(paddedSpace: paddedSpace)
-        
-        XCTAssertEqual(testCase.space.dimension, paddedTest.space.dimension - 1)
-        
-        for i in 0..<testCase.space.dimension {
-            for j in 0..<testCase.space.dimension {
-                XCTAssertEqual(testCase[i,j], paddedTest[i,j])
-            }
-        }
-        
-        for i in 0..<paddedTest.space.dimension {
-            XCTAssertEqual(paddedTest[paddedTest.space.dimension - 1, i], 0)
-            XCTAssertEqual(paddedTest[i, paddedTest.space.dimension - 1], 0)
-            
-            
-        }
-    }
-    
-    func testRemovePadding() throws {
-        
-        let testCase = Matrix<Double>(elements: [1,2,3,4,5,6,7,8,9], in: VectorSpace(dimension: 3, label: "test padding space"))
-        let paddedSpace = VectorSpace<Double>(dimension: 4, label: "padded space")
-        let paddedTest = testCase.addPaddingToGetEvenDimensions(paddedSpace: paddedSpace)
-        let removedPadding = paddedTest.removePadding(unpaddedSpace: testCase.space)
-        XCTAssertEqual(testCase, removedPadding)
-        
-        
-    }
-    
-    
-    func testQuartetsForDivideAndConquer() throws {
-        
-        
-        let testQuartetSpace4 = VectorSpace<Double>(dimension: 4, label: "4x4 test quartet space")
-        let testQuartetSpace6 = VectorSpace<Double>(dimension: 6, label: "6x6 test quartet space ")
-        
-        var testCaseElem4 = [Double](repeating: 0.0, count: 16)
-        var testCaseElem6 = [Double](repeating: 0.0, count: 36)
-        
-        for i in 0..<16 {
-            testCaseElem4[i] = Double(i+1)
-        }
-        
-        for i in 0..<36 {
-            testCaseElem6[i] = Double(i+1)
-        }
-        // surely some type of syntax to do that as one line.
-        
-        let testCase4 = Matrix<Double>(elements: testCaseElem4, in: testQuartetSpace4)
-        let testCase6 = Matrix<Double>(elements: testCaseElem6, in: testQuartetSpace6)
-        
-        let quartetSpace4x4 = VectorSpace<Double>(dimension: 2, label: "4x4 quartet space")
-        let quartetSpace6x6 = VectorSpace<Double>(dimension: 3, label: "6x6 quartet space")
-        let (a,b,c,d) = testCase4.getDivideAndConquerQuartets(quartetSpace4x4)
-        let (e,f,g,h) = testCase6.getDivideAndConquerQuartets(quartetSpace6x6)
-        
-        XCTAssertEqual(a.elements, [1,2,5,6])
-        XCTAssertEqual(b.elements, [3,4,7,8])
-        XCTAssertEqual(c.elements, [9,10,13,14])
-        XCTAssertEqual(d.elements, [11,12,15,16])
-        
-        
-        XCTAssertEqual(e.elements, [1,2,3,7,8,9,13,14,15])
-        XCTAssertEqual(f.elements, [4,5,6,10,11,12,16,17,18])
-        XCTAssertEqual(g.elements, [19,20,21,25,26,27,31,32,33])
-        XCTAssertEqual(h.elements, [22,23,24,28,29,30,34,35,36])
-        
-        
-        
-        
-    }
-    
-    func testDivideAndConquerAssemblyFromQuartets() throws {
-        let testQuartetSpace4 = VectorSpace<Double>(dimension: 4, label: "4x4 test quartet space")
-        let testQuartetSpace6 = VectorSpace<Double>(dimension: 6, label: "6x6 test quartet space ")
-        
-        var testCaseElem4 = [Double](repeating: 0.0, count: 16)
-        var testCaseElem6 = [Double](repeating: 0.0, count: 36)
-        
-        for i in 0..<16 {
-            testCaseElem4[i] = Double(i+1)
-        }
-        
-        for i in 0..<36 {
-            testCaseElem6[i] = Double(i+1)
-        }
-        
-        let testCase4 = Matrix<Double>(elements: testCaseElem4, in: testQuartetSpace4)
-        let testCase6 = Matrix<Double>(elements: testCaseElem6, in: testQuartetSpace6)
-        
-        let quartetSpace4x4 = VectorSpace<Double>(dimension: 2, label: "4x4 quartet space")
-        let quartetSpace6x6 = VectorSpace<Double>(dimension: 3, label: "6x6 quartet space")
-        let (a,b,c,d) = testCase4.getDivideAndConquerQuartets(quartetSpace4x4)
-        let (e,f,g,h) = testCase6.getDivideAndConquerQuartets(quartetSpace6x6)
-        
-        let assembledTestCase4 = testCase4.assembleDivideAndConquerResult(previousSpace: testQuartetSpace4, a, b, c, d)
-        let assembledTestCase6 = testCase6.assembleDivideAndConquerResult(previousSpace: testQuartetSpace6, e, f, g, h)
-        
-        XCTAssertEqual(testCase4, assembledTestCase4)
-        XCTAssertEqual(testCase6, assembledTestCase6)
-        
-    }
-    
-    
-    func testDivideAndConquerMatrixMultiplication3x3() throws {
-        let space = VectorSpace<Double>(dimension: 3, label: "test divide and conquer 3x3 space")
-        let lhs = Matrix<Double>(elements: [1,0,0,0,1,0,0,0,1], in: space)
-        let rhs = Matrix<Double>(elements: [1,2,3,4,5,6,7,8,9], in: space)
-        
-        XCTAssertEqual(lhs.divideAndConquerMultiplication(rhs), rhs)
-        
-        
-    }
-    
-    
-    func testDivideAndConquer4x4() throws {
-        
-        let space = VectorSpace<Double>(dimension: 4, label: "test dcmm 4x4 space")
-        let lhs = Matrix<Double>(elements: [3.0/2,0,0,0,0,1.0/2,0,0,0,0,-1.0/2,0,0,0,0,-3.0/2], in: space)
-        let rhs = Matrix<Double>(elements: [1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1], in: space)
-        
-        XCTAssertEqual(lhs.divideAndConquerMultiplication(rhs).elements, lhs.bruteForceMatrixMultiplication(rhs).elements)
-    }
 }
 
 

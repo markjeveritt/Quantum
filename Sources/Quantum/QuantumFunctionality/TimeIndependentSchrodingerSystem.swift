@@ -14,10 +14,9 @@ open class TimeIndependentSchrodingerSystem {
         minus_i_H = minusi * hamiltonian
     }
     
-    open func schrodingerEquation(time: Real,
-                                  psi: StateVector)
-        -> StateVector {
-            if(sparse) {
+    open func schrodingerEquation(time: Real, psi: StateVector)-> StateVector {
+        
+            if sparse {
                 return sparse_minus_i_H! * psi
             } else {
                 return minus_i_H * psi
@@ -26,6 +25,8 @@ open class TimeIndependentSchrodingerSystem {
     
     public var sparse = false
     public var sparse_minus_i_H: SparseMatrix<ComplexReal>?
+    
+    
     open func useSparseAlgebra() {
         sparse = true
         sparse_minus_i_H = SparseMatrix(from: minus_i_H)
@@ -35,6 +36,7 @@ open class TimeIndependentSchrodingerSystem {
     }
 
     public func evolve(by dt: Real) {
+        
         multiStepIvpIntegrator(from: time,
                                to: time + dt,
                                first_try_of_stepsize: dt,
@@ -42,6 +44,9 @@ open class TimeIndependentSchrodingerSystem {
                                accuracy: 10e-6,
                                y: &Psi,
                                derivative_function: schrodingerEquation)
+        
+        time += dt
+        
         /*
             More sophisticated versions of this class might allow one to choose which
             integrator to use as we could replace the above with e.g.
@@ -51,7 +56,6 @@ open class TimeIndependentSchrodingerSystem {
                                          y: Psi,
                                          derivative_function: schrodingerEquation)
         */
-        time += dt
     }
 }
 //  Created by M J Everitt on 21/01/2022.

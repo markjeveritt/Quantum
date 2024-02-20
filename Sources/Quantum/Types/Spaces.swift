@@ -111,6 +111,42 @@ extension VectorSpace {
         
         return Matrix(elements: C, in: self)
     }
+
+    public func tensorProduct(of A: DiagonalSparseMatrix<ScalarField>,
+                              with B: DiagonalSparseMatrix<ScalarField>)
+    -> DiagonalSparseMatrix<ScalarField> {
+        
+        assert (setofSpaces.count == 2, "Tensor product currently only implemented for two operators not in tensor product spaces")
+
+        let temp = [A,B].sorted(by: { $0.space.identifier < $1.space.identifier} )
+
+        for i in 0 ..< setofSpaces.count {
+            assert (temp[i].space == setofSpaces[i], "operator in wrong space " + A.space.description)
+        }
+        
+        var output  = DiagonalSparseMatrix(in: self)
+        
+        for (lhsDiagIdx, lhsDiag) in A.diagonals {
+            for (rhsDiagIdx, rhsDiag) in B.diagonals {
+                
+                let currOutputDiagIdx = B.space.dimension * lhsDiagIdx + rhsDiagIdx
+                let currOutputDiag = lhsDiag.tensorProductWith(rhsDiag)
+                
+                
+                if let _ = output[currOutputDiagIdx] {
+                    
+                    output[currOutputDiagIdx]! += currOutputDiag
+                }
+                
+                else {
+                    output[currOutputDiagIdx] = currOutputDiag
+                }
+            }
+        }
+        return output
+        
+        
+    }
     
     public func tensorProduct(of A: Vector<ScalarField>,
                               with B: Vector<ScalarField>)
