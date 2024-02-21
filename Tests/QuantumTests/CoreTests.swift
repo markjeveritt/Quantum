@@ -302,13 +302,12 @@ final class CoreTests: XCTestCase {
         let oneDiag = MatrixDiagonal(dimension: 2, diagIdx: 1, elements: [0:2])
         let minusOneDiag = MatrixDiagonal(dimension: 2, diagIdx: -1, elements: [1:3])
         
-        var matrix = DiagonalSparseMatrix(in: space,
+        let matrix = DiagonalSparseMatrix(in: space,
                                           diagonals: [0: zeroDiag, 1: oneDiag, -1: minusOneDiag])
         
         var vector = Vector(in: space)
         vector[0] = 5.0
         vector[1] = 6.0
-        print((matrix * vector).elements)
         XCTAssertTrue( (matrix * vector).elements == [17.0,39.0] )
     }
     
@@ -378,6 +377,21 @@ final class CoreTests: XCTestCase {
         for diagIdx in [-5,-4,-3,-2,0,1,3,4] {
             XCTAssertNil(C.diagonals[diagIdx])
         }
+        
+    }
+    
+    func test_matrixFromDiagonalSparse() throws {
+        
+        let testSpace = VectorSpace<Double>(dimension: 4, label: "")
+        
+        let denseMatrix = Matrix<Double>(elements: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16], in: testSpace)
+        
+        let diagonalSparse = DiagonalSparseMatrix(from: denseMatrix)
+        
+        let reproducedDenseMatrix = Matrix<Double>(from: diagonalSparse)
+        
+        XCTAssertEqual(reproducedDenseMatrix, denseMatrix)
+        
         
     }
     

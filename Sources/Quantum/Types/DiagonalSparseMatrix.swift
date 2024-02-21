@@ -174,6 +174,23 @@ public struct DiagonalSparseMatrix<T: Scalar>: OperatorType {
     
 }
 
+extension Matrix {
+    public init (from diagonalSparseMatrix: DiagonalSparseMatrix<T>) {
+        space = diagonalSparseMatrix.space
+        
+        elements = [T](repeating: T(0), count: space.dimension*space.dimension)
+        
+        for (diagIdx, diag) in diagonalSparseMatrix.diagonals {
+            
+            for (rowIdx, element) in diag.elements {
+                elements[rowIdx*space.dimension + rowIdx + diagIdx] = element
+            }
+            
+        }
+        
+    }
+}
+
 
 public struct MatrixDiagonal<T: Scalar> {
     

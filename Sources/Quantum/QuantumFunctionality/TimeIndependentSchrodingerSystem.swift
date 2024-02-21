@@ -15,24 +15,40 @@ open class TimeIndependentSchrodingerSystem {
     }
     
     open func schrodingerEquation(time: Real, psi: StateVector)-> StateVector {
+            
+        if diagonalSparse { return diagSparse_minus_i_H! * psi }
         
-            if sparse {
-                return sparse_minus_i_H! * psi
-            } else {
-                return minus_i_H * psi
-            }
+        if sparse { return sparse_minus_i_H! * psi }
+        
+        return minus_i_H * psi
+            
     }
+    
+    
+    public var diagonalSparse = false
+    public var diagSparse_minus_i_H: DiagonalSparseMatrix<ComplexReal>?
+    
     
     public var sparse = false
     public var sparse_minus_i_H: SparseMatrix<ComplexReal>?
     
     
     open func useSparseAlgebra() {
+        diagonalSparse = false
+        
         sparse = true
         sparse_minus_i_H = SparseMatrix(from: minus_i_H)
     }
+    
+    open func useDiagonalSparseAlgebra() {
+        diagonalSparse = true
+        diagSparse_minus_i_H = DiagonalSparseMatrix(from: minus_i_H)
+    }
+    
+    
     public func useNonSparseAlgebra() {
         sparse = false
+        diagonalSparse = false
     }
 
     public func evolve(by dt: Real) {
