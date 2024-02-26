@@ -29,6 +29,26 @@ public struct DiagonalSparseMatrix<T: Scalar>: OperatorType {
         }
     }
     
+    public subscript (row: Int, col: Int) -> T? {
+        
+        get {
+            let diagIdx = col - row
+            
+            guard let diag = self.diagonals[diagIdx] else { return nil }
+            guard let val = diag[row] else {return nil}
+            
+            return val
+        }
+        
+        set {
+            let diagIdx = col - row
+            
+            self.diagonals[diagIdx]?.elements[row] = newValue
+        }
+    }
+    
+    
+    
     public init(in space: VectorSpace<T>, diagonals: [Int : MatrixDiagonal<T>]) {
         self.space = space
         self.diagonals = diagonals

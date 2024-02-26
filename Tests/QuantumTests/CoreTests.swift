@@ -395,6 +395,22 @@ final class CoreTests: XCTestCase {
         
     }
     
+    func test_diagonalSparseIndexing() throws {
+        
+        let testSpace = VectorSpace<Double>(dimension: 4, label: "")
+        
+        let denseMatrix = Matrix<Double>(elements: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16], in: testSpace)
+        
+        let diagonalSparse = DiagonalSparseMatrix(from: denseMatrix)
+        
+        for row in 0..<4 {
+            for col in 0..<4 {
+                
+                XCTAssertEqual(denseMatrix[row,col], diagonalSparse[row,col])
+            }
+        }
+    }
+    
     
     
     
