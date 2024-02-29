@@ -14,27 +14,45 @@ open class TimeIndependentSchrodingerSystem {
         minus_i_H = minusi * hamiltonian
     }
     
-    open func schrodingerEquation(time: Real,
-                                  psi: StateVector)
-        -> StateVector {
-            if(sparse) {
-                return sparse_minus_i_H! * psi
-            } else {
-                return minus_i_H * psi
-            }
+    open func schrodingerEquation(time: Real, psi: StateVector)-> StateVector {
+            
+        if diagonalSparse { return diagSparse_minus_i_H! * psi }
+        
+        if sparse { return sparse_minus_i_H! * psi }
+        
+        return minus_i_H * psi
+            
     }
+    
+    
+    public var diagonalSparse = false
+    public var diagSparse_minus_i_H: DiagonalSparseMatrix<ComplexReal>?
+    
     
     public var sparse = false
     public var sparse_minus_i_H: SparseMatrix<ComplexReal>?
+    
+    
     open func useSparseAlgebra() {
+        diagonalSparse = false
+        
         sparse = true
         sparse_minus_i_H = SparseMatrix(from: minus_i_H)
     }
+    
+    open func useDiagonalSparseAlgebra() {
+        diagonalSparse = true
+        diagSparse_minus_i_H = DiagonalSparseMatrix(from: minus_i_H)
+    }
+    
+    
     public func useNonSparseAlgebra() {
         sparse = false
+        diagonalSparse = false
     }
 
     public func evolve(by dt: Real) {
+        
         multiStepIvpIntegrator(from: time,
                                to: time + dt,
                                first_try_of_stepsize: dt,
@@ -42,6 +60,9 @@ open class TimeIndependentSchrodingerSystem {
                                accuracy: 10e-6,
                                y: &Psi,
                                derivative_function: schrodingerEquation)
+        
+        time += dt
+        
         /*
             More sophisticated versions of this class might allow one to choose which
             integrator to use as we could replace the above with e.g.
@@ -51,7 +72,6 @@ open class TimeIndependentSchrodingerSystem {
                                          y: Psi,
                                          derivative_function: schrodingerEquation)
         */
-        time += dt
     }
 }
 //  Created by M J Everitt on 21/01/2022.

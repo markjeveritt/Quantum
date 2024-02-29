@@ -160,5 +160,17 @@ final class QuantumTests: XCTestCase {
         XCTAssert(spaces.setofSpaces[0].identifier == sho_index)
         XCTAssert(spaces.setofSpaces[1].identifier == spin_index)
     }
+    
+    func test_diagonalSpaceOperator() throws {
+        let qubitSpace = StateSpace(dimension: 2, label: "qubit space")
+        let denseSigmaY = qubitSpace.sigmaY
+        let diagSparseSigmaY = DiagonalSparseMatrix(from: denseSigmaY)
+        
+        
+        XCTAssertEqual(diagSparseSigmaY.space, qubitSpace)
+        XCTAssertEqual(diagSparseSigmaY.diagonals[1]!.elements, [0:Complex(real: 0, imag: -1)])
+        XCTAssertEqual(diagSparseSigmaY.diagonals[-1]!.elements, [1:Complex(real: 0, imag: 1)])
+        XCTAssertNil(diagSparseSigmaY.diagonals[0])
+    }
 }
 //  Created by  M J Everitt on 17/01/2022.

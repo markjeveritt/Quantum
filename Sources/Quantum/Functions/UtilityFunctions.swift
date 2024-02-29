@@ -109,5 +109,16 @@ public func kronekerProduct<T: Scalar>  (
   return C
 }
 
+
+public func getRowLimits(dim: Int, diagIdx: Int) -> (Int, Int) {
+    
+    if diagIdx <= 0 {
+        return (-diagIdx, dim - 1)
+    }
+    
+    return (0, dim - diagIdx - 1)
+    
+}
+
 //  Created by M J Everitt on 17/01/2022.
 

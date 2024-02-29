@@ -138,7 +138,6 @@ public struct SparseMatrix<T: Scalar>: OperatorType {
                "Cant multiply sparse matrices from different spaces")
         let dim = lhs.space.dimension
 
-        var temp = T(0)
         var cntr = 0
         var kk = 0
         var k = 0

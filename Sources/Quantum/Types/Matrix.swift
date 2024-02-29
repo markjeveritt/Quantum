@@ -4,6 +4,10 @@
  Note that a matrix must live in a vector space.
  
  TODO: Optimise
+ KEY:
+ DCMM - divide and conquer matrix multiplication
+ BFMM - brute force matrix multiplication
+ SMM - strassen's matrix multiplication
  */
 import Foundation
 // Importantly (Liskov) Matrix can be a VectorType but it should not extend Vector.
@@ -48,18 +52,29 @@ public struct Matrix<T: Scalar>: VectorType, OperatorType {
     
     public static func * (lhs: Self, rhs: Self) -> Self {
 
-        var output = Self(in: lhs.space)
-        let dim = lhs.space.dimension
-        // there are much more efficient ways to do this - coding for clarity
+        return lhs.bruteForceMatrixMultiplication(rhs)
+    }
+    
+    
+    public func bruteForceMatrixMultiplication(_ rhs: Matrix<T>) -> Matrix<T> {
+        
+        assert(rhs.space == self.space, "Cannot multiply two matrices of different spaces")
+        
+        var output = Self(in: self.space)
+        let dim = self.space.dimension
+
         for i in 0 ..< dim {
             for j in 0 ..< dim {
                 for k in 0 ..< dim {
-                    output[i, j] = output[i, j] + lhs[i, k] * rhs[k, j]
+                    output[i, j] = output[i, j] + self[i, k] * rhs[k, j]
                 }
             }
         }
         return output
     }
+
+    
+    
     public static func * (lhs: Matrix<T>, rhs: Vector<T>) -> Vector<T> {
         checkInSameSpace(lhs,rhs)
 
@@ -148,3 +163,4 @@ extension Matrix where Self.ScalarField: ComplexNumber {
     }
 }
 //  Created by M J Everitt on 18/01/2022.
+
